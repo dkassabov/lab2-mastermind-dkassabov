@@ -17,15 +17,24 @@ public class CodeMaker {
     }
 
     public void checkGuess(Guess guess) {
-        int wrongPositions = 0;
         int correctPositions = 0;
+        int wrongPositions = 0;
         for (int i = 0; i < 4; i++) {
-            if (guess.getGuess().charAt(i) == getSecretCode().charAt(i))
+            // If correct color and position
+            if (guess.getGuess().charAt(i) == secretCode.charAt(i)){
                 correctPositions++;
+                continue;
+            }
             for (int j = 0; j < 4; j++) {
-                
+                // If correct color but wrong position
+                if (guess.getGuess().charAt(i) == secretCode.charAt(j))
+                    wrongPositions++;
             }
         }
+        if (correctPositions != 0)
+            guess.setCorrectPositions(correctPositions);
+        if (wrongPositions != 0)
+            guess.setWrongPositions(wrongPositions);
     }
 
     public String getSecretCode() {
