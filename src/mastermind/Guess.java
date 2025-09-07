@@ -1,5 +1,13 @@
 package mastermind;
 
+/**
+ * Represents a single codeword guess in the Mastermind game.
+ * The CodeBreaker makes the new Guess and the CodeMaker checks it.
+ *
+ * @author RIT CS
+ * @author Denis Kassabov
+ */
+
 public class Guess {
     private static int currentGuessNumber = 1;
     private String guess;

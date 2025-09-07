@@ -5,8 +5,9 @@ package mastermind;
  * as the command line argument, otherwise it will be randomly generated.
  *
  * @author RIT CS
- * @author YOUR NAME HERE
+ * @author Denis Kassabov
  */
+
 public class MasterMind {
     /** the number of digits in the secret code */
     public final static int SECRET_CODE_LENGTH = 4;

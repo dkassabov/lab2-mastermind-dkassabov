@@ -1,5 +1,14 @@
 package mastermind;
 
+/**
+ * The CodeMaker is the one who creates or stores the secret code
+ * and allows the CodeBreaker to make guesses that check against
+ * the secret code.
+ *
+ * @author RIT CS
+ * @author Denis Kassabov
+ */
+
 public class CodeMaker {
     private String secretCode;
 
