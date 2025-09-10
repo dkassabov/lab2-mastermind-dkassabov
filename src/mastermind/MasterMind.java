@@ -20,10 +20,17 @@ public class MasterMind {
     /** the number of turns in the game */
     private final static int MAX_TURNS = 10;
 
+    /** The CodeMaker who owns the secret code */
     private CodeMaker codeMaker;
+    /** The CodeBreaker who makes guesses */
     private CodeBreaker codeBreaker;
+    /** List of guesses made during the game */
     private Guesses guesses;
 
+    /** Construct a new MasterMind game with a given secret code.
+     *
+     * @param secretCode the 4-digit secret code
+     */
     public MasterMind(String secretCode) {
         codeMaker = new CodeMaker(secretCode);
         codeBreaker = new CodeBreaker();
@@ -49,6 +56,7 @@ public class MasterMind {
 
     /**
      * Check that there are no duplicates in the code.
+     *
      * @param code the code to check
      * @rit.pre code is of the correct length
      * @rit.pre code has all digits in valid range
@@ -58,6 +66,10 @@ public class MasterMind {
         return code.length() == code.chars().distinct().count();
     }
 
+    /**
+     * Play one game of MasterMind, prompting the CodeBreaker for guesses
+     * until the game is won, lost, or quit.
+     */
     public void playGame() {
 
         boolean gameWon = false;
@@ -143,7 +155,6 @@ public class MasterMind {
             }
         }
 
-        // TODO - Everything is okay to play the game if we got here
         MasterMind masterMind = new MasterMind(args[0]);
         masterMind.playGame();
     }

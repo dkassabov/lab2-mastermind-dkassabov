@@ -10,12 +10,24 @@ package mastermind;
  */
 
 public class CodeMaker {
+    /** The secret 4-digit code chosen by the CodeMaker */
     private String secretCode;
 
+    /**
+     * Construct a CodeMaker with a specific secret code.
+     *
+     * @param secretCode the 4-digit secret code
+     */
     public CodeMaker(String secretCode) {
         this.secretCode = secretCode;
     }
 
+    /**
+     * Compare a guess against the secret code and update its number of
+     * correct and wrong positions.
+     *
+     * @param guess the guess to evaluate
+     */
     public void checkGuess(Guess guess) {
         int correctPositions = 0;
         int wrongPositions = 0;
@@ -37,6 +49,11 @@ public class CodeMaker {
             guess.setWrongPositions(wrongPositions);
     }
 
+    /**
+     * Get the secret code.
+     *
+     * @return the secret code string.
+     */
     public String getSecretCode() {
 
         return secretCode;
