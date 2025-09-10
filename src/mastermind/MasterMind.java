@@ -1,7 +1,5 @@
 package mastermind;
 
-import java.util.Arrays;
-
 /**
  * The main class for the Mastermind game.  The secret code can be provided
  * as the command line argument, otherwise it will be randomly generated.
